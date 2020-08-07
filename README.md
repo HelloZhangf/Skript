@@ -1,4 +1,3 @@
 # Skript 基礎教學
-<div class="text-white bg-blue mb-2">
-  .text-white on .bg-blue
-</div>
+<a class="link-gray" href="https://skripthub.net/tutorials/9">link-gray</a>
+
