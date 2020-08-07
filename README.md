@@ -1,8 +1,4 @@
 # Skript 基礎教學
-
-<div class="text-purple">
-  This text is purple, <a href="#" class="text-inherit">including the link</a>
+<div class="text-white bg-blue mb-2">
+  .text-white on .bg-blue
 </div>
-
- 
-
