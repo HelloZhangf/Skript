@@ -1,28 +1,5 @@
 # Skript 基礎教學
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a><a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
-<a href="#effect-load-yaml">Load yaml</a>
 
-
-Load yaml
+<div class="text-purple">
+  This text is purple, <a href="#" class="text-inherit">including the link</a>
+</div>
