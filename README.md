@@ -1,7 +1,6 @@
 # Skript 基礎教學
 
-<div class="text-purple">
-  This text is purple, 
-  <a href="#" class="text-inherit">including the link</a>
-</div>
 
+****<a class="link-gray" href="https://github.com/SkriptLang/Skript/releases">Skript</a>是一款 <a class="link-gray" href="https://www.minecraft.net/zh-hant/">Minecraft</a> 的腳本插件 , 其主要功用為提供給不會寫程式語言的人 , 讓他們能撰寫屬於自己的腳本****
+
+****
