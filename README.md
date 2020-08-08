@@ -14,7 +14,7 @@
 ****
 # 進入正篇教學
 
-SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), Effects(效果), Expressions(表達式), Conditions(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
+SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(表達式), Conditions(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
 
 首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
 
@@ -86,9 +86,23 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
   On rightclick: #當玩家按右鍵時
     clicked block is set #玩家點擊到的種類是方塊
     set event-block to air #將玩家點擊到的方塊設置成空氣(也就是直接清除)
- ```
- 
- 
+  ```
+  
+# 4.Conditions
+  作為判斷是否往下繼續讀的語法 , ```if```, ```else```, ```else if```
+  ```diff
+  + 特定物品
+  On rightclick: #當玩家按右鍵時
+    clicked is set #玩家點擊的目標是一個方塊 
+    if name of player's tool is "清除大棒": #如果玩家手持的物品的名稱是 清除大棒 , 就執行以下指令 , 如果不是 , 則讀都不讀直接跳到 else if 或 else ; 注意! 有if 後面要加上冒號 ' : '
+      set event-block to air
+      send "指定的方塊已被清除"
+    else if name of player's tool is "閃電棒":
+      strike lightning at the event-location
+      send "天雷!"
+    else:
+      send "手上並無指定物品"
+      
  
   
   
