@@ -16,12 +16,30 @@
 
 SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), Effects(效果), Expressions(表達式), Conditions(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
 
+首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
+
+注意! 副檔名一定要是```.sk``` , 不然SK不會去讀取他
+
+在檔案面前加上 ```-``` 就不會去讀取 EX: ```-Hello.sk```
+
+常用SK指令:
+
+```/sk reload all``` 重新讀取全部SK檔案
+
+```/sk reload <檔名>``` 重新讀取指定的檔案(不用加副檔名)
+
 # 1.Events
   事件: 他是一種動作 , 當玩家在做 或者 做完某個動作時會觸發以下的動作......
-  ```diff+
+  ```diff
   On Death of player: #這就是一個事件 , 當玩家死後會觸發下列效果
-    broadcast "%player% 你怎麼死了OAO???"  #廣播 %player% 你怎麼死了OAO???
-  ```
+    broadcast "%player% 你怎麼死了OAO???"  #廣播 %player% 你怎麼死了OAO??? ,%player% 是一種變量 , 就是兩個%%裡面放要顯示出來的物件 ex:%now% , %name of player's tool% , %player's uuid%
+  
+ # 注意! SK在寫的時候 , 同個.sk檔案內 , 在換行時候 , 請一併使用同個空格格式 例如: 4個 空白建(或兩個空白鍵) = 一個tab
+ - 不然會出錯!
+ - 錯誤訊息: indentation error: expected 4 spaces, but found 1 tab
+ 
+ 
+ ```
   ****
   ```diff
   + 玻璃掉落
@@ -43,4 +61,35 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
 ```
 ****
 
+
+# 2.Effects
+  顧名思義 , 就是當事件被觸發時會執行的腳本 , 直接給範例
+  
+  ```diff
+  + 加入廣播
+  On join: #當玩家加入遊戲時
+    broadcast "%player% 闖進伺服器!"  #廣播 %player% 闖進了伺服器 , 建議用set join message
+ ```
+ 因這個比較簡單 , 這就介紹到這
+ ****
+ 
+ # 3.Expressions
+  這個介紹起來比較抽象 , 他就是類似像 ```set ......``` 可以去做其他操作的語句
+  ```diff
+  + 更改加入訊息
+  On join: #當玩家加入遊戲時
+    set join message to "&a%player% 加入了HELLOLIME伺服器!" #將登入訊息改為 &a%player% 加入了HELLOLIME伺服器!
+  ```
+  ****
+  ```diff
+  + 方塊變空氣
+  On rightclick: #當玩家按右鍵時
+    clicked block is set #玩家點擊到的種類是方塊
+    set event-block to air #將玩家點擊到的方塊設置成空氣(也就是直接清除)
+ ```
+ 
+ 
+ 
+  
+  
 
