@@ -92,16 +92,16 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
   作為判斷是否往下繼續讀的語法 , ```if```, ```else```, ```else if```
   ```diff
   + 特定物品
-  On rightclick:       #當玩家按右鍵時
-    clicked is set       #玩家點擊的目標是一個方塊 
+  On rightclick:                                 #當玩家按右鍵時
+    clicked is set                               #玩家點擊的類型是一個方塊 
     if name of player's tool is "清除大棒":       #如果玩家手持的物品的名稱是 清除大棒 , 就執行以下動作 , 如果不是 , 則讀都不讀直接跳到 else if 或 else ; 注意! 有if 後面要加上冒號 ' : '
-      set event-block to air       #將點擊方塊設置成空氣
-      send "指定的方塊已被清除"       #發送 指定的方塊已被清除 的訊息給玩家 (to player 可加可不加 , 但在特定時候要加 ,例如On damage 或 On death 的事件)
-    else if name of player's tool is "閃電棒":       #如果玩家手持的物品的名稱是 閃電棒 , 就執行以下動作 , 如果不 , 則跳到 else 
-      strike lightning at the event-location       # 打一道閃電在點擊的位置
-      send "天雷!"       #發送 天雷! 的訊息給玩家
-    else:       # 當上述條件句都未達成是會執行的語句
-      send "手上並無指定物品"       #發送 手上並無指定物品 的訊息給玩家
+      set event-block to air                     #將點擊方塊設置成空氣
+      send "指定的方塊已被清除"                   #發送 指定的方塊已被清除 的訊息給玩家 (to player 可加可不加 , 但在特定時候要加 ,例如On damage 或 On death 的事件)
+    else if name of player's tool is "閃電棒":    #如果玩家手持的物品的名稱是 閃電棒 , 就執行以下動作 , 如果不 , 則跳到 else 
+      strike lightning at the event-location     #打一道閃電在點擊的位置
+      send "天雷!"                               #發送 天雷! 的訊息給玩家
+    else:                                        # 當上述條件句都未達成是會執行的語句
+      send "手上並無指定物品"                     #發送 手上並無指定物品 的訊息給玩家
       
   -不一定一個IF就要配一個 else if 或者 else if 
       
