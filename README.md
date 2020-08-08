@@ -14,7 +14,7 @@
 ****
 # 進入正篇教學
 
-SK 其主要組成要素有: Events(事件), Effects(效果), Expressions(表達式), Conditions(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
+SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), Effects(效果), Expressions(表達式), Conditions(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
 
 # 1.Events
   事件: 他是一種動作 , 當玩家在做 或者 做完某個動作時會觸發以下的動作......
