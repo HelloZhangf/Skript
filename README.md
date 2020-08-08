@@ -167,6 +167,30 @@ On break:                             #當玩家破壞方塊時
   add event-block to {BlockLog::*}    #將玩家破壞的方塊添加到 {BlockLog::*} 此列表裡面
   send "%{BlockLog::*}%"              #告訴玩家 %{BlockLog::*}% , 如你破壞了 泥土 , 草地 , 玻璃 那將他列印出來會是 --> Dirt , Grass , Glass  
 ```
-****變數的應用很廣 , 如果你想寫個很強大的腳本 , 絕對不能缺少 
-  
+****變數的應用很廣 , 如果你想寫個很強大的腳本 , 絕對不能缺少****
 
+# 6.Commands
+  SK可以註冊屬於自己的指令 , 指令可以當作一個事件 , 執行後觸發effects
+  ```diff
+  + 註冊指令
+  commnad /sayhi: #註冊一個指令 : /hi
+    trigger:      #這是註冊指令必寫語句 , 意思就是執行這指令會觸發什麼Effects
+      send "hi"   #告訴玩家 hi
+  ```
+  ****
+  ```diff
+  + 傳送點設置
+  command /setpoint [<text>]:                          #註冊一個指令: /setpoint <可輸入文字>
+    trigger:                                           #這是註冊指令必寫語句 , 意思就是執行這指令會觸發什麼Effects
+      if player is op:                                 #檢查玩家是否是OP , 如果不是就跳到他對應的else (也可改成if player has permission "<你想要的權限>":)
+        if arg exists:                                 #檢查 <文字> 是否有輸入 , 如果不是就跳到他對應的else 
+          add location of player to {point::%arg%}     #將玩家的位置添加到 {point::*} 此列表
+          send "名稱: %arg% 的位置設置成功"             #告訴玩家 名稱: %arg% 的位置設置成功 ,arg = argument , 也就是指令 /setpoint <text> 所輸入的<text> ,EX: /setpoint 家
+          stop                                         #停止繼續往下執行 , 這可不能亂加 , 如果你想要執行完以上的effects之後不要往下執行才加 , 不需要則不用加
+        else:                                          #當arg 沒有輸入時
+          send "請輸入位置的名稱!"                      #告訴玩家 請輸入位置的名稱!
+          send "指令用法: /setpoint <傳點名稱>"         #告訴玩家 指令用法: /setpoint <傳點名稱>
+          stop                                         #停止繼續往下執行 , 這可不能亂加 , 如果你想要執行完以上的effects之後不要往下執行才加 , 不需要則不用加
+      else:                                            #當玩家不是OP時
+        send "你並不是管理員!"                          #告訴玩家 你並不是管理員!
+   ```
