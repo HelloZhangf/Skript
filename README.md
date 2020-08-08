@@ -104,7 +104,12 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
       send "手上並無指定物品"                     #發送 手上並無指定物品 的訊息給玩家
       
   -不一定一個IF就要配一個 else if 或者 else if 
+****
+```diff
+  On damege:
+    if victim is a player:
       
+    
  
   
   
