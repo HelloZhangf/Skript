@@ -22,12 +22,25 @@ SK 其主要組成要素有: Events(事件), Effects(效果), Expressions(表達
   On Death of player: #這就是一個事件 , 當玩家死後會觸發下列效果
     broadcast "%player% 你怎麼死了OAO???"  #廣播 %player% 你怎麼死了OAO???
   ```
-  
+  ****
   ```diff
-  + 現在想做一個破壞玻璃會掉落玻璃的腳本
+  + 玻璃掉落
   On break of glass: #當玻璃被破壞時
     drop 1 glass at event-location #掉落一個玻璃在被破壞的位置
  ```
- 
+ ****
+ ```diff
+ + 玩家初次加入
+ On first join: #當玩家第一次加入
+  chance of 50%: #有50%的機率觸發以下條件
+    ban player due to "你是天選之人!" #BAN掉他並且告訴他是天選之人
+ ```
+ ****
+ ```diff
+ + 右鍵傳訊息
+ On rightclcik: #當玩家按右鍵的時候
+  send "HI" to player #發送HI給玩家
+```
+****
 
 
