@@ -9,12 +9,12 @@
 
 ****我該如何安裝SK呢? 請參考以下文章: <a class="link-gray" href="https://forum.gamer.com.tw/C.php?bsn=18673&snA=123879">Here</a>****
 
-****我這裡比較強調實作應用 , 所以每講完一個基本要素 , 就會帶入更多它的實作應用給您****
+****我這裡比較強調介紹更多語法以及其他功能 , 所以基礎觀念基本上都是帶過 , 有問題的朋友寫可以用 Issues 問我****
 
 ****
 # 進入正篇教學
 
-SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(表達式), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#4conditions">Conditions</a>(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
+SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(表達式), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#4conditions">Conditions</a>(條件), https://github.com/HelloZhangf/Skript/blob/master/README.md#5varible">Variable</a>(變數), Commands(製作指令), Loops(迴圈或等等用法...) , Functions(函式)
 
 首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
 
@@ -107,15 +107,66 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
 ```
 ****
 ```diff
-  On damege:                   #當實體在受傷的時候
-    if victim is a player:     #受傷的實體是玩家
-      cancen event             #取消受傷事件
+  On damege:                                                #當實體在受傷的時候
+    if victim is a player:                                  #受傷的實體是玩家
+      send "你受到了伺服器的保護!" to victim                 #告訴受傷的玩家 你受到了伺服器的保護! 
+      send "伺服器保護著所有人以至於你打不到他!" to attacker  #伺服器保護著所有人以至於你打不到他!
+      cancen event                                          #取消受傷事件
 ```
 ****由上面可知 , 不用else也能 , else 是用在當條件有正反兩個或兩個以上結果時要用 , EX: 當A是B 就執行 , 不是A不是B 就執行ELSE****
 
 ****
 
- 
+# 5. Variables
+  變數可以存放Value(值) , 可以存許多東西 , EX:數字 , 字串 , 等等......
   
+  在SK的變數分為兩種:
+  
+  ```
+  區域變數(本地變數):
+    用法: {_LocalVariable} , 以兩個大括號以及一個底線為主 , 同樣名稱的區域變數 , 只能在單一事件內使用 , 跨事件就會完全是不一樣的Value , 並且會隨著事件結束而刪除
+    主要用於: 單一事件內的計算或者將某物件存放在變數內簡化其寫法
+  ```
+****
+  ```
+  全域變數(全局變數):
+    用法: {GlobalVariable} , 以兩個大括號為主 , 可以跨事件使用 , 並且無刪除之前 , 都會一直存在(直到關服) , 否則他就會占用著伺服器記憶體 
+    主要用於: 如上 , 如若要做跨事件 , 就必須用到 , 其主要功能與區域變數一樣 , 在於事件結束會不會不見
+  ```
+****
+  ```
+  列表變數(陣列):
+    用法: {_ListVariable::*} or {ListVariable::*} , 跟其他變數一樣 , 後面加上兩個冒號或一個*或其他value , 上面那兩個變數只能儲存單個value , 列表變數則可一次儲存大於一個的value
+    主要用於: 當要記錄超過一個的值時 , 就可以使用
+  ```
+****
+
+```diff
++ 死亡位置
+On Death:                                        #在玩家死亡的時候 , 也可寫成 event-entity is player
+  victim is player                               #死亡的實體是玩家
+  set {_DeathLoc} to event-location              #將玩家死亡的位置存放到 {_DeathLoc}
+  send "%{_DeathLoc}% 是你的死亡位置" to victim   #告訴死亡的玩家 %{_DeathLoc}% 是你的死亡位置 , %%一樣可以把變數內存在的value印出來
+```
+****
+```diff
++ 死亡次數 
+On Death:                                                              #在玩家死亡的時候 , 也可寫成 event-entity is playe
+  victim is player                                                     #死亡的實體是玩家
+  if {NumberOfDeath.%player%} is not set:                              #如果計算玩家死亡次數的變數未設置
+    set {NumberOfDeath.%player%} to 1                                  #將計算死亡次數的變數設置為1 ,也就是玩家第一次死亡
+    send "你的死亡次數已累積至: %{NumberOfDeath.%player%}%" to victim   #告訴死亡的玩家 你的死亡次數已累積至: %{NumberOfDeath.%player%}%
+  else:                                                                #如果計算玩家死亡次數的變數已經設置過了
+    add 1 to {NumberOfDeath.%player%}                                  #加一到計算玩家死亡的變數
+    send "你的死亡次數已累積至: %{NumberOfDeath.%player%}%" to victim   #告訴死亡的玩家 你的死亡次數已累積至: %{NumberOfDeath.%player%}%
+```
+****
+```diff
++ 破壞紀錄
+On break:                             #當玩家破壞方塊時
+  add event-block to {BlockLog::*}    #將玩家破壞的方塊添加到 {BlockLog::*} 此列表裡面
+  send "%{BlockLog::*}%"              #告訴玩家 %{BlockLog::*}% , 如你破壞了 泥土 , 草地 , 玻璃 那將他列印出來會是 --> Dirt , Grass , Glass  
+```
+****變數的應用很廣 , 如果你想寫個很強大的腳本 , 絕對不能缺少 
   
 
