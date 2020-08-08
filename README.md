@@ -14,7 +14,7 @@
 ****
 # 進入正篇教學
 
-SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(表達式), Conditions(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
+SK 其主要組成要素有: <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#1events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(表達式), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#4conditions">Conditions</a>(條件), Variables(變數), Functions(函式), Loops(迴圈或等等用法...)
 
 首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
 
@@ -108,7 +108,7 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
 ```diff
   On damege:                   #當實體在受傷的時候
     if victim is a player:     #受傷的實體是玩家
-      cancen event             #取消事件
+      cancen event             #取消受傷事件
 ```
 ****由上面可知 , 不用else也能 , else 是用在當條件有正反兩個或兩個以上結果時要用 , EX: 當A是B 就執行 , 不是A不是B 就執行ELSE****
 
