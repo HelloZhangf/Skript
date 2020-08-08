@@ -105,7 +105,7 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
       
   -不一定一個IF就要配一個 else if 或者 else if 
 ```
-
+****
 ```diff
   On damege:                   #當實體在受傷的時候
     if victim is a player:     #受傷的實體是玩家
