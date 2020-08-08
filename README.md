@@ -117,7 +117,7 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
 
 ****
 
-# 5. Variables
+# 5.Variables
   變數可以存放Value(值) , 可以存許多東西 , EX:數字 , 字串 , 等等......
   
   在SK的變數分為兩種:
