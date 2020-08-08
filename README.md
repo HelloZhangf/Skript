@@ -106,10 +106,14 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
   -不一定一個IF就要配一個 else if 或者 else if 
 ****
 ```diff
-  On damege:
-    if victim is a player:
-      
-    
+  On damege:                   #當實體在受傷的時候
+    if victim is a player:     #受傷的實體是玩家
+      cancen event             #取消事件
+```
+由上面可知 , 不用else也能 , else 是用在當條件有正反兩個或兩個以上結果時要用 , EX: 當A是B 就執行 , 不是A不是B 就執行ELSE
+
+****
+
  
   
   
