@@ -9,7 +9,7 @@
 
 ****我該如何安裝SK呢? 請參考以下文章: <a class="link-gray" href="https://forum.gamer.com.tw/C.php?bsn=18673&snA=123879">Here</a>****
 
-****我這裡比較強調介紹更多語法以及其他功能 , 所以基礎觀念基本上都是帶過 , 有問題的朋友寫可以用 Issues 問我****
+****我這裡比較強調介紹更多語法以及其他功能 , 所以基礎觀念基本上都是帶過 , 有問題的朋友寫可以用 <a class="link-gray" href="https://github.com/HelloZhangf/Skript/issues">Issues</a> 問我****
 
 ****
 # 進入正篇教學
