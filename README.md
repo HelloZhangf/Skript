@@ -198,4 +198,30 @@ On break:                             #當玩家破壞方塊時
    ****
 # 7. Loops
   loop 的用法有很多種 , 包括檢查列表變數內的值 , 或者當迴圈使用
+  ```diff
+  + loop列表
+  command /pointlist                            #註冊一個指令: /pointlist
+    trigger:                                    #這是註冊指令必寫語句 , 意思就是執行這指令會觸發什麼Effects
+      loop {point::*}:                          #逐一檢查 {point::*} 裡面的每一個value
+        send "%loop-index% : %loop-value%"      #告訴玩家 %loop-index% : %loop-value% , 其中loop-index傳送點設置時的 title , 然後他裡面還存放著一個value , 那也就是當初設置的位置
+                                                #EX: 當初設定點名稱為: pointest , 腳下位置在 x= 100 y=63 z= 100 ,那依照我這樣寫印出來會是: pointset : x= 100.0 , y= 63.0 , z= 100.0
+ ```
+ ****
+ 接下來介紹他<a class="link-gray" href="https://zh.wikipedia.org/wiki/%E8%BF%B4%E5%9C%88">迴圈</a>的用法
+ 
+ SK的迴圈分為兩種 , 一種是 ```loop``` , 則另一種是 ```while```
+ 
+ ```
+ loop 迴圈:
+  通常用在知道迴圈執行次數時
+```
+
+```
+while 迴圈:
+  通常用在不知道迴圈執行次數時 , 無止盡的迴圈 , 或是等到迴圈判斷條件不符合時
+```
+
+****
+
+
 
