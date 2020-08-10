@@ -11,3 +11,4 @@ command /toggle:
 On damage:
 	if {toggle.%palyer%} is set:
 		cancel event
+ 
