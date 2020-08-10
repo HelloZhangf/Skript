@@ -1,0 +1,13 @@
+command /toggle:
+	trigger:
+		if {toggle.%player%} is not set:
+			set {toggle.%player%} to true
+			send "您的無敵模式已開啟"
+			stop
+		else:
+			delete {toggle.%player%}
+			send "無敵模式已關閉"
+			
+On damage:
+	if {toggle.%palyer%} is set:
+		cancel event
