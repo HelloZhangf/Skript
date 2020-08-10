@@ -113,7 +113,7 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
       send "伺服器保護著所有人以至於你打不到他!" to attacker  #伺服器保護著所有人以至於你打不到他!
       cancen event                                          #取消受傷事件
 ```
-****由上面可知 , 不用else也能 , else 是用在當條件有正反兩個或兩個以上結果時要用 , EX: 當A是B 就執行 , 不是A不是B 就執行ELSE****
+****由上面可知 , 不用else也能 , else 是用在當條件有正反兩個或兩個以上結果時要用 , EX: 當A是B 就執行 , A不是B 就執行ELSE****
 
 ****
 
