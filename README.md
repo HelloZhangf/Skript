@@ -1,5 +1,6 @@
 # Skript 基礎教學
 
+****因為我要準備學測! , 所以更新的速度很慢喔!****
 
 ****<a class="link-gray" href="https://github.com/SkriptLang/Skript/releases">Skript</a>是一款 <a class="link-gray" href="https://www.minecraft.net/zh-hant/">Minecraft</a> 的腳本插件 , 其主要功用為提供給不會寫程式語言的人 , 讓他們能撰寫屬於自己的腳本****
 
@@ -222,6 +223,30 @@ while 迴圈:
 ```
 
 ****
+```diff
+Loop 迴圈範例
++ 計算
+command /count:           #註冊一個指令: /count
+  trigger:                #這是註冊指令必寫語句 , 意思就是執行這指令會觸發什麼Effects
+    set {_count} to 0     #將 {_count} 此變數的value設置成0
+    loop 100 times:       #將在迴圈內的Effects 執行一百次
+      add 1 to {_count}   #當每次在執行時 , +1 到 {_count} 此變數
+    send "%{_count}%"     #當結束迴圈時 , 告訴告玩家 {_count} 內的 value , 如果將send 寫在迴圈內 , 將在每次執行結果告訴玩家
+```
 
+****
 
+```diff
+while迴圈範例
++ 計算
+command /count:            #註冊一個指令: /count
+  trigger:                 #這是註冊指令必寫語句 , 意思就是執行這指令會觸發什麼Effects
+    set {_count} to 0      #將 {_count} 此變數的value設置成0
+    while {_count} < 100:  #當{_count} 內的 value 小於 100時會執行以下Effects
+      add 1 to {_count}    #當每次在執行時 , +1 到 {_count} 此變數
+    send "%{_count}%"      #當結束迴圈時 , 告訴告玩家 {_count} 內的 value , 如果將send 寫在迴圈內 , 將在每次執行結果告訴玩家
+```
 
+****
+
+****由上兩範例結果 , 可得知 ,Loop迴圈是用在明確知道迴圈內的 Effects要執行幾次而達到你想要的結果才結束 ; While迴圈則是當條件未滿足時 , 執行到條件滿足時****
