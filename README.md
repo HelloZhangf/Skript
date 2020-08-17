@@ -250,3 +250,17 @@ command /count:            #註冊一個指令: /count
 ****
 
 ****由上兩範例結果 , 可得知 ,Loop迴圈是用在明確知道迴圈內的 Effects要執行幾次而達到你想要的結果才結束 ; While迴圈則是當條件未滿足時 , 執行到條件滿足時****
+
+```diff
++ loop 其他用法
+On death of player:                         #當玩家死亡的時候
+  loop blocks in radius 3 of victim:        #loop 以玩家為中心的半徑三的範圍之方塊
+    set loop-blocks to air                  #將loop到的方塊設置成為 空氣
+  broadcast "%victim% 死亡時吞噬了旁邊的方塊"   #廣播 %victim% 死亡時吞噬了旁邊的方塊
+```
+
+****
+loop 除了 迴圈 以外還有檢查半徑的用法 , 所以loop是一個很重要的語法 , 能善用者就能寫出很厲害的東西
+****
+
+
