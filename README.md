@@ -35,7 +35,7 @@ SK 其主要組成要素有: <a class="link-gray" href="https://github.com/Hello
   On Death of player: #這就是一個事件 , 當玩家死後會觸發下列效果
     broadcast "%player% 你怎麼死了OAO???"  #廣播 %player% 你怎麼死了OAO??? ,%player% 是一種變量 , 就是兩個%%裡面放要顯示出來的物件 ex:%now% , %name of player's tool% , %player's uuid%
   
- # 注意! SK在寫的時候 , 同個.sk檔案內 , 在換行時候 , 請一併使用同個空格格式 例如: 4個 空白建(或兩個空白鍵) = 一個tab
+ # 注意! SK在寫的時候 , Notepad++中(同個.sk檔案內 , 在換行時候 , 請一併使用同個空格格式 例如: 4個 空白建(或兩個空白鍵) = 一個tab)-->除非特別設定
  - 不然會出錯!
  - 錯誤訊息: indentation error: expected 4 spaces, but found 1 tab
  
