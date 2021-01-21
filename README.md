@@ -14,6 +14,7 @@
 
 ****
 # 進入正篇教學
+Skript主要由以下部件組成:
 - [1.Events-事件](#1events)
 - [2.Effects-效果](#2effects)
 - [3.Expressions-特定物件](#3expressions)
@@ -23,6 +24,7 @@
 - [7.Loops-迴圈](#7Loops)
 - 8.Functions-函式
 
+****安裝教學****
 
 首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
 
