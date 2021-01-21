@@ -20,7 +20,8 @@
 - [4.Conditions-條件判斷](#4conditions)
 - [5.Variables-變數](#5Variables)
 - [6.Commands-註冊指令](#6commands)
-- [7.Functions-函式]
+- [7.Loops-迴圈](#7Loops)
+- 8.Functions-函式
 
 
 首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
@@ -203,7 +204,7 @@ On break:                             #當玩家破壞方塊時
         send "你並不是管理員!"                          #告訴玩家 你並不是管理員!
    ```
    ****
-# 7. Loops
+# 7.Loops
   loop 的用法有很多種 , 包括檢查列表變數內的值 , 或者當迴圈使用
   ```diff
   + loop列表
