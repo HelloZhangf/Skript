@@ -14,8 +14,8 @@
 
 ****
 # 進入正篇教學
-
-SK 其主要組成要素有: <a class="link-gray" href="#-1.Events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(well..不太好解釋), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#4conditions">Conditions</a>(條件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#5Variables">Variables</a>(變數), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#6commands">Commands</a>(製作指令), Loops(迴圈或等等用法...) , Functions(函式)
+- [1.Events](#-1.Events)
+SK 其主要組成要素有: <a class="link-gray" href="#-1.Events">Events</a>(事件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#2effects">Effects</a>(效果), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#3expressions">Expressions</a>(特定物件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#4conditions">Conditions</a>(條件), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#5Variables">Variables</a>(變數), <a class="link-gray" href="https://github.com/HelloZhangf/Skript/blob/master/README.md#6commands">Commands</a>(製作指令), Loops(迴圈或等等用法...) , Functions(函式)
 
 首先你要到 Plugins資料夾內找到Skript , 然後進去 , 再找到 Script這個資料夾 , 並在裡面創立一個 名為 ```<想要的名稱>. sk``` 的資料夾
 
