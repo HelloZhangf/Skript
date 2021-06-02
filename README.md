@@ -294,21 +294,24 @@ loop 除了 迴圈 以外還有檢查半徑的用法。
   +函式範例(無回傳)
   +加入遊戲廣播
 
-  function joinBroadcast(p: player): #宣告一個名為 joinBroadcast()的函式，其引數為player，導入後以{_p}作為區域變數在函式內使用。
+  function joinBroadcast(p: player): 
+  #宣告一個名為 joinBroadcast()的函式，其引數為player，導入後以{_p}作為區域變數在函式內使用。
 
     broadcast "%{_p}%" #廣播導入進來的引數value，也就是玩家姓名。
 
   #使用函式
   #可透過任何事件，或者指令。
   on join: #當玩家加入伺服器的時候。
-    joinBroadcast(player) #使用joinBroadcast() 函式，其引數為 player ，player就代表事件中的玩家。
+    joinBroadcast(player) 
+    #使用joinBroadcast() 函式，其引數為 player ，player就代表事件中的玩家。
   ```
 
   ```diff
   +函式範例(有回傳)
   +取得玩家位置
 
-  function getPlayerLoc(p: player) :: location: #宣告一個名為 getPlayerLoc()的函式，其引數為player，導入後以{_p}作為區域變數在函式內使用，其資料回傳型態為location(位置)。
+  function getPlayerLoc(p: player) :: location: 
+  #宣告一個名為 getPlayerLoc()的函式，其引數為player，導入後以{_p}作為區域變數在函式內使用，其資料回傳型態為location(位置)。
 
     set {_loc} to location of {_p} #我們將{_loc}的value設置成 指定玩家的位置
 
@@ -323,5 +326,5 @@ loop 除了 迴圈 以外還有檢查半徑的用法。
 
       send "%arg%的位置在%{_targetLoc}%" #告訴指令執行者它輸入指定的玩家的座標在哪。
 
-  
+
   ```
