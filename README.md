@@ -132,48 +132,51 @@ Skript主要由以下部件組成:
   
   ```
   區域變數(本地變數):
-    用法: {_LocalVariable}，以兩個大括號以及一個底線為主，同樣名稱的區域變數，只能在單一事件內使用，跨事件就會完全是不一樣的Value，並且會隨著事件結束而刪除
+    用法: {_localVariable}，以兩個大括號以及一個底線為主，同樣名稱的區域變數，只能在單一事件內使用，跨事件就會完全是不一樣的Value，並且會隨著事件結束而刪除
     主要用於: 單一事件內的計算或者將某物件存放在變數內簡化其寫法
   ```
 ****
   ```
   全域變數(全局變數):
-    用法: {GlobalVariable}，以兩個大括號為主，可以跨事件使用，並且無刪除之前，都會一直存在(直到關服)，否則他就會占用著伺服器記憶體 
+    用法: {globalVariable}，以兩個大括號為主，可以跨事件使用，並且無刪除之前，都會一直存在(直到關服)，否則他就會占用著伺服器記憶體 
     主要用於: 如上，如若要做跨事件，就必須用到。
   ```
 ****
   ```
   列表變數(陣列):
-    用法: {_ListVariable::*} or {ListVariable::*}，跟其他變數一樣，後面加上兩個冒號或一個*或其他value，上面那兩個變數只能儲存單個value，列表變數則可一次儲存大於一個的value
+    用法: {_listVariable::*} or {listVariable::*}，跟其他變數一樣，後面加上兩個冒號或一個*或其他value，上面那兩個變數只能儲存單個value，列表變數則可一次儲存大於一個的value
     主要用於: 當要記錄超過一個的值時，就可以使用
   ```
 ****
+
+  另外這邊提一下[駝峰式命名法則](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/555937/)，就是變數的第二個英文字開始要大寫，例如 ```{_myNameIsNUTT}```。
+
 
 ```diff
 + 死亡位置
 On Death:                                        #在玩家死亡的時候，也可寫成 event-entity is player
   victim is player                               #死亡的實體是玩家
-  set {_DeathLoc} to event-location              #將玩家死亡的位置存放到 {_DeathLoc}
-  send "%{_DeathLoc}% 是你的死亡位置" to victim   #告訴死亡的玩家 %{_DeathLoc}% 是你的死亡位置，%%一樣可以把變數內存在的value印出來
+  set {_deathLoc} to event-location              #將玩家死亡的位置存放到 {_DeathLoc}
+  send "%{_deathLoc}% 是你的死亡位置" to victim   #告訴死亡的玩家 %{_DeathLoc}% 是你的死亡位置，%%一樣可以把變數內存在的value印出來
 ```
 ****
 ```diff
 + 死亡次數 
 On Death:                                                              #在玩家死亡的時候，也可寫成 event-entity is playe
   victim is player                                                     #死亡的實體是玩家
-  if {NumberOfDeath.%player%} is not set:                              #如果計算玩家死亡次數的變數未設置
-    set {NumberOfDeath.%player%} to 1                                  #將計算死亡次數的變數設置為1 ，也就是玩家第一次死亡
-    send "你的死亡次數已累積至: %{NumberOfDeath.%player%}%" to victim   #告訴死亡的玩家 你的死亡次數已累積至: %{NumberOfDeath.%player%}%
+  if {numberOfDeath.%player%} is not set:                              #如果計算玩家死亡次數的變數未設置
+    set {numberOfDeath.%player%} to 1                                  #將計算死亡次數的變數設置為1 ，也就是玩家第一次死亡
+    send "你的死亡次數已累積至: %{numberOfDeath.%player%}%" to victim   #告訴死亡的玩家 你的死亡次數已累積至: %{numberOfDeath.%player%}%
   else:                                                                #如果計算玩家死亡次數的變數已經設置過了
-    add 1 to {NumberOfDeath.%player%}                                  #加一到計算玩家死亡的變數
-    send "你的死亡次數已累積至: %{NumberOfDeath.%player%}%" to victim   #告訴死亡的玩家 你的死亡次數已累積至: %{NumberOfDeath.%player%}%
+    add 1 to {numberOfDeath.%player%}                                  #加一到計算玩家死亡的變數
+    send "你的死亡次數已累積至: %{numberOfDeath.%player%}%" to victim   #告訴死亡的玩家 你的死亡次數已累積至: %{numberOfDeath.%player%}%
 ```
 ****
 ```diff
 + 破壞紀錄
 On break:                             #當玩家破壞方塊時
-  add {BlockLog::*} to event-block    #將玩家破壞的方塊添加到 {BlockLog::*} 此列表裡面
-  send "%{BlockLog::*}%"              #告訴玩家 %{BlockLog::*}%，如你破壞了 泥土，草地，玻璃 那將他列印出來會是 --> Dirt，Grass，Glass  
+  add {blockLog::*} to event-block    #將玩家破壞的方塊添加到 {BlockLog::*} 此列表裡面
+  send "%{blockLog::*}%"              #告訴玩家 %{BlockLog::*}%，如你破壞了 泥土，草地，玻璃 那將他列印出來會是 --> Dirt, Grass, Glass  
 ```
 ****變數的應用很廣，如果你想寫個很強大的腳本，絕對不能缺少****
 
@@ -275,7 +278,7 @@ loop 除了 迴圈 以外還有檢查半徑的用法。
 # 8.Functions
   函式主要功能為簡化長串或重複動作的程式碼，且可藉由一連串的處理過程最後返還一個值得到想要的資料型態。
 
-  <a style="color: red">函式對新手來說不太友善，看不懂實屬正常，記得多看幾遍XD及練習。</a>
+  函式對新手來說不太友善，看不懂實屬正常，記得多看幾遍XD及練習。
 
   寫法:
   []部分為可寫可不寫
